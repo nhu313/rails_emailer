@@ -5,4 +5,9 @@ class Emailer < ApplicationMailer
       format.text { render text: message }
     end
   end
+
+  def send_with_view(recipient, subject, message)
+    @message = message
+    mail(to: recipient, subject: subject)
+  end
 end
