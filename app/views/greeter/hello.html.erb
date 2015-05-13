@@ -1,2 +1,13 @@
 <h1>Greeter#hello</h1>
 <p>Find me in app/views/greeter/hello.html.erb</p>
+
+app/views/greeter/hello.html.erb
+<%= form_tag("/greeter/sendmail") do %>
+  <%= label_tag(:email, "Email:") %>
+  <%= text_field_tag(:email) %> <br>
+  <%= label_tag(:subject, "Subject:") %>
+  <%= text_field_tag(:subject) %> <br>
+  <%= label_tag(:message, "Message:") %>
+  <%= text_area_tag(:message, "Hello friend!") %> <br>
+  <%= submit_tag("Send") %>
+<% end %>
